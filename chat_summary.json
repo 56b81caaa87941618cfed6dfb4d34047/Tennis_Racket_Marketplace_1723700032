@@ -24,5 +24,11 @@
         "content": "{\"status\": \"success\", \"ui_elements_checklist\": [{\"feature\": \"Implement a theme toggle for dark/light mode\", \"checked\": true}, {\"feature\": \"Add a customizable color palette option for user profiles\", \"checked\": false}, {\"feature\": \"Utilize dynamic background effects that react to user interactions\", \"checked\": false}, {\"feature\": \"Offer a selection of background textures and patterns for user customization\", \"checked\": true}, {\"feature\": \"Enable background color adjustment based on time of day\", \"checked\": false}], \"input_token_count\": 210, \"output_token_count\": 98, \"time_taken\": \"0:00:02.886784\"}",
         "timestamp": "15082024053627",
         "message_id": "guest15082024053622"
+    },
+    {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you have a specific shade of dark purple in mind, or would you like us to select a shade that complements the existing design?\", \"option1\": \"I have a specific shade in mind (please specify the hex code or provide a sample).\", \"option2\": \"Please select a shade that complements the existing design.\"}, {\"question 2\": \"Is this background change meant for the entire website, including all pages and components, or only specific sections?\", \"option1\": \"Change the background for the entire website.\", \"option2\": \"Only specific sections (please specify which sections).\"}], \"input_token_count\": 256, \"output_token_count\": 137, \"time_taken\": \"0:00:03.687851\"}",
+        "timestamp": "15082024053628",
+        "message_id": "guest15082024053622"
     }
 ]
