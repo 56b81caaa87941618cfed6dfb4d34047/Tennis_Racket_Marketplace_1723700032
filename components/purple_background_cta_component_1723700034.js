@@ -20,11 +20,11 @@ Vue.component("purple_background_cta_component_1723700034", {
                     </svg>
                 </div>
                 <!-- Content -->
-                <div id="content" class="max-w-3xl mx-auto text-center">
+                <div id="content" class="max-w-3xl mx-auto text-center bg-opacity-30 bg-white backdrop-filter backdrop-blur-md rounded-lg shadow-lg p-8">
                     <div id="content-subtitle" class="flex"><div id="content-subtitle-text" class="flex-1 font-medium text-transparent bg-clip-text pb-3 bg-gradient-to-r from-pink-300 to-purple-300">Find Your Winning Edge</div></div>
-                    <div class="flex" id="content-title-container"><h2 id="content-title" class="flex-1 h2 text-transparent bg-clip-text pb-4 bg-gradient-to-r from-white via-pink-100 to-white">Serve Up Your Perfect Racket</h2></div>
+                    <div class="flex" id="content-title-container"><h2 id="content-title" class="flex-1 h2 text-transparent bg-clip-text pb-4 bg-gradient-to-r from-pink-200 via-purple-300 to-pink-200">Serve Up Your Perfect Racket</h2></div>
                     <div class="flex" id="content-body-container"><p id="content-body" class="flex-1 text-lg mb-8 text-pink-100">Discover, compare, and purchase top-quality tennis rackets from leading brands all in one place. Our marketplace brings you an extensive selection to elevate your game.</p></div>
-                    <a id="content-cta-button" href="#0" class="btn transition duration-150 ease-in-out group bg-gradient-to-r from-pink-400 via-purple-500 to-pink-400 text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transform">Get Started <span id="content-cta-arrow" class="tracking-normal group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1 text-pink-200">-&gt;</span></a>
+                    <a id="content-cta-button" href="#0" class="btn transition duration-300 ease-in-out group bg-gradient-to-r from-pink-400 via-purple-500 to-pink-400 text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transform hover:bg-opacity-80">Get Started <span id="content-cta-arrow" class="tracking-normal group-hover:translate-x-0.5 transition-transform duration-300 ease-in-out ml-1 text-pink-200">-&gt;</span></a>
                 </div>
             </div>
         </div>
@@ -32,17 +32,17 @@ Vue.component("purple_background_cta_component_1723700034", {
         data() {
             return {
                 expanded: false, 
-                radialGradientPrimaryStyle: "bg-pink-400",
-                radialGradientSecondaryStyle: "bg-purple-500",
-                stopColorPrimaryStyle: "#FF69B4",
-                stopColorSecondaryStyle: "#8A2BE2",
+                radialGradientPrimaryStyle: "bg-pink-500",
+                radialGradientSecondaryStyle: "bg-purple-600",
+                stopColorPrimaryStyle: "#FF1493",
+                stopColorSecondaryStyle: "#8B008B",
                 transparentTextStyle: "text-transparent",
                 contentSubtitleStyle: "bg-gradient-to-r from-pink-300 to-purple-300",
-                contentCtaTitleStyle: "bg-gradient-to-r from-white via-pink-100 to-white",
+                contentCtaTitleStyle: "bg-gradient-to-r from-pink-200 via-purple-300 to-pink-200",
                 contentBodyStyle: "text-pink-100",
                 contentCtaButtonPrimaryStyle:"text-white",
                 contentCtaButtonGradientStyle: "bg-gradient-to-r from-pink-400 via-purple-500 to-pink-400",
-                contentCtaButtonHoverStyle: "hover:shadow-xl hover:scale-105 transform",
+                contentCtaButtonHoverStyle: "hover:shadow-xl hover:scale-105 transform hover:bg-opacity-80",
                 contentCtaArrowStyle: "text-pink-200"
         },
     });
