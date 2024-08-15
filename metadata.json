@@ -4,5 +4,6 @@
     "project_description": "tennis racket marketplace",
     "creation_time": "2024-08-15 05:33:52.539093",
     "current_state": "The current state of the application has a navbar and a header",
-    "selected_starter_template_id": "stellar"
+    "selected_starter_template_id": "stellar",
+    "frontend_theme_prompt": "The image features a vivid color scheme dominated by shades of pink, purple, and black, creating a surreal outer space landscape with celestial bodies and abstract mountainous terrain. The style is fantastical and dreamlike, with an emphasis on vibrant lighting and contrasts to enhance the otherworldly atmosphere."
 }
