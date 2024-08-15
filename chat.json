@@ -1,6 +1,15 @@
 [
     {
         "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you prefer a more saturated dark red or a muted dark red background for better readability and aesthetic balance?\", \"option1\": \"Saturated dark red\", \"option2\": \"Muted dark red\"}, {\"question 2\": \"Would you like the text and other elements' colors adjusted to maintain contrast and legibility against the dark red background?\", \"option1\": \"Yes, adjust text and elements for contrast\", \"option2\": \"No, keep the current color scheme for text and elements\"}], \"input_token_count\": 303, \"output_token_count\": 115, \"time_taken\": \"0:00:04.177989\"}",
+        "message_id": "guest15082024053743",
+        "timestamp": "15082024053750",
+        "component_file_name": "purple_background_cta_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
+        "role": "chat_qna",
         "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you have a specific shade of dark purple in mind, or would you like us to select a shade that complements the existing design?\", \"option1\": \"I have a specific shade in mind (please specify the hex code or provide a sample).\", \"option2\": \"Please select a shade that complements the existing design.\"}, {\"question 2\": \"Is this background change meant for the entire website, including all pages and components, or only specific sections?\", \"option1\": \"Change the background for the entire website.\", \"option2\": \"Only specific sections (please specify which sections).\"}], \"input_token_count\": 256, \"output_token_count\": 137, \"time_taken\": \"0:00:03.687851\"}",
         "message_id": "guest15082024053622",
         "timestamp": "15082024053628",
