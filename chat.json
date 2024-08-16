@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you want the garabage bags background to be a realistic photo or an illustrated design?\", \"option1\": \"Realistic photo\", \"option2\": \"Illustrated design\"}, {\"question 2\": \"Should the garabage bags background cover the entire site or be applied to specific sections only?\", \"option1\": \"Entire site\", \"option2\": \"Specific sections only\"}], \"input_token_count\": 536, \"output_token_count\": 94, \"time_taken\": \"0:00:03.141350\"}",
+        "message_id": "guest16082024073533",
+        "timestamp": "16082024073542",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_acknowledge",
         "content": "I'll work on changing the background to garbage bags.",
         "message_id": "guest16082024073533",
