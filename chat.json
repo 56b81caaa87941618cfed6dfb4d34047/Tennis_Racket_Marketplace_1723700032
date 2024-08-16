@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_ui_checklist",
+        "content": "{\"status\": \"success\", \"ui_elements_checklist\": [{\"feature\": \"Change the background image to a tennis court to align with marketplace theme\", \"checked\": false}, {\"feature\": \"Add a filter for rock-themed tennis rackets for those interested in the rock concept\", \"checked\": false}, {\"feature\": \"Integrate a theme selector for users to switch between different background themes (including rocks)\", \"checked\": true}, {\"feature\": \"Implement customizable background settings for user profiles, allowing them to choose their own backgrounds\", \"checked\": false}, {\"feature\": \"Offer a visual cue or icon indicating special edition or unique rackets, which can include rock-themed designs\", \"checked\": true}, {\"feature\": \"Incorporate a real-time 3D view of tennis rackets with a rock texture option for enhanced visualization\", \"checked\": false}], \"input_token_count\": 498, \"output_token_count\": 175, \"time_taken\": \"0:00:05.921287\"}",
+        "message_id": "guest16082024085506",
+        "timestamp": "16082024085518",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_qna",
         "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"For the pile of rocks background, do you prefer a realistic photo representation or an artistic/stylized interpretation?\", \"option1\": \"Realistic photo\", \"option2\": \"Artistic/stylized interpretation\"}, {\"question 2\": \"Would you like the background to cover the entire app interface or be confined to specific sections such as the header or footer?\", \"option1\": \"Cover the entire app interface\", \"option2\": \"Confined to specific sections\"}], \"input_token_count\": 544, \"output_token_count\": 109, \"time_taken\": \"0:00:03.840662\"}",
         "message_id": "guest16082024085506",
