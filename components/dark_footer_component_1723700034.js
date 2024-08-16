@@ -19,7 +19,7 @@ Vue.component("dark_footer_component_1723700034", {
                     <div id="footer-logo-copyright" class="mb-4 sm:mb-0">
                         <div class="mb-4">
                             <!-- Logo -->
-                            <a id="footer-logo" class="inline-flex" href="index.html" aria-label="© 2023 RacketHub. All rights reserved."> <img src="./images/logo.svg" width="38" height="38" alt="Stellar"></a>
+                            <a id="footer-logo" class="inline-flex" href="index.html" aria-label="© 2023 RacketHub. All rights reserved."> <img src="https://raw.githubusercontent.com/56b81caaa87941618cfed6dfb4d34047/Tennis_Racket_Marketplace_1723700032/main/images/177790c5094e459c9d20552bf147313b.jpeg" width="38" height="38" alt="Stellar"></a>
                         </div>
                         <div id="footer-copyright" class="text-sm" :class="textColorSecondary">&copy; © 2023 RacketHub. All rights reserved. <span :class="textColorTertiary">-</span> All rights reserved.</div>
                     </div>
