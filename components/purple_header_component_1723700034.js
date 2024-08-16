@@ -5,7 +5,7 @@
 */ 
 
 Vue.component("purple_header_component_1723700034", {
-    template: asdfasdf`
+    template: `
     <header class="w-full z-30" id="header-section-container">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 bg-gradient-to-r from-pink-500 via-purple-600 to-black bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg">
             <div class="flex items-center justify-between h-16 md:h-20">
