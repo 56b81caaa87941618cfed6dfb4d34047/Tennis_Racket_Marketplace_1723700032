@@ -1,6 +1,6 @@
 <template>
   <!-- Features list -->
-  <div id="features-grid" class="grid md:grid-cols-3 gap-8 md:gap-12 bg-white p-5">
+  <div id="features-grid" style="min-height: 470px" class="grid md:grid-cols-3 gap-8 md:gap-12 bg-white p-5">
     <!-- Feature 1 -->
     <div id="feature-1">
       <img src="https://raw.githubusercontent.com/56b81caaa87941618cfed6dfb4d34047/Tennis_Racket_Marketplace_1723700032/main/images/dc72b3bbe715479aa1b766a9b9ffb28f.jpeg" alt="Feature 1 Image" class="mb-4" />
