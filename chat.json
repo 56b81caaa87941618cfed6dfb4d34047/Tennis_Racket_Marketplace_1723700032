@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_acknowledge",
+        "content": "Got it. Changing the background to a pile of garbage bags.",
+        "message_id": "guest16082024073351",
+        "timestamp": "16082024073352",
+        "component_file_name": "",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "user",
         "content": "change the background to be a pile of garbage bags",
         "message_id": "guest16082024073351",
