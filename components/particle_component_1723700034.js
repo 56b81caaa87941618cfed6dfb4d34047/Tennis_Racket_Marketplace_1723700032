@@ -20,21 +20,9 @@
 
 <script>
 
-// Example mixin
-const exampleMixin = {
-  data() {
-    return {
-      mixinData: "Data from mixin"
-    };
-  },
-  created() {
-    console.log("Mixin created hook");
-  }
-};
 
 export default {
   name: "ExampleComponent",
-  mixins: [exampleMixin],
   props: {
     title: {
       type: String,
