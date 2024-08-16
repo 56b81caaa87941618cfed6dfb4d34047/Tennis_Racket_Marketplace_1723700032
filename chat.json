@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you want the email form to be the focal point on the landing page or integrated within a specific section?\", \"option1\": \"Make it the focal point on the landing page\", \"option2\": \"Integrate it within a specific section\"}, {\"question 2\": \"Should the form appear statically in the designated position, or would you prefer it to pop up dynamically based on user action (e.g., clicking a button)?\", \"option1\": \"Static display in the designated position\", \"option2\": \"Pop-up dynamically upon user action\"}], \"input_token_count\": 259, \"output_token_count\": 126, \"time_taken\": \"0:00:03.439657\"}",
+        "message_id": "guest16082024085640",
+        "timestamp": "16082024085649",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "user",
         "content": "move the email form elements to the front and center",
         "message_id": "guest16082024085640",
