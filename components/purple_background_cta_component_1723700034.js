@@ -66,24 +66,12 @@ export default {
   name: 'PurpleBackgroundCtaComponent',
   data() {
     return {
-      expanded: false,
-      radialGradientPrimaryStyle: "bg-pink-500",
-      radialGradientSecondaryStyle: "bg-purple-600",
-      stopColorPrimaryStyle: "#FF1493",
-      stopColorSecondaryStyle: "#8B008B",
-      transparentTextStyle: "text-transparent",
-      contentSubtitleStyle: "bg-gradient-to-r from-pink-300 to-purple-300",
-      contentCtaTitleStyle: "bg-gradient-to-r from-pink-200 via-purple-300 to-pink-200",
-      contentBodyStyle: "text-pink-100",
-      contentCtaButtonPrimaryStyle: "text-white",
-      contentCtaButtonGradientStyle: "bg-gradient-to-r from-pink-400 via-purple-500 to-pink-400",
-      contentCtaButtonHoverStyle: "hover:shadow-xl hover:scale-105 transform hover:bg-opacity-80",
-      contentCtaArrowStyle: "text-pink-200"
+      expanded: false
     };
   }
 };
 </script>
 
 <style scoped>
-/* Add any scoped styles here if needed */
+/* Remove if not used */
 </style>
