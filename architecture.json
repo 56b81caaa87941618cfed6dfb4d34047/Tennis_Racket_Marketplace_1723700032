@@ -38,5 +38,9 @@
     {
         "level": 1,
         "task_description": "This is the user's previous chat history with this AI:\nThe user requested a background change, first asking for a pile of rocks, which the AI acknowledged and confirmed it would implement. Subsequently, the user switched to requesting an alligator background, to which the AI responded affirmatively. The AI also provided the user with a checklist of additional features, indicating various options such as an alligator pattern background, a theme switcher, and customization features, with some options checked as implemented and others as not yet started. \n\nThe AI then presented two questions to the user about preferences for the alligator background\u2019s design and coverage. The user also requested a dark purple background, which the AI confirmed it would adjust. Throughout the conversation, the AI asked the user multiple questions regarding color preferences for backgrounds and text contrast to ensure aesthetic balance. The AI continued to offer additional features relevant to the user's requests, including toggles for light/dark mode, customizable color palettes, and background textures. The conversation concluded with the AI asking for more details about the project to better assist the user.\nAI: I'll work on changing the background to garbage bags.\nUser: change the background to be a pile of garbage bags\nAI: Got it. Changing the background to a pile of garbage bags.\nUser: change the background to be a pile of garbage bags\nThis is the user's current request of changes to be made: Change the background image to be a pile of rocks"
+    },
+    {
+        "level": 1,
+        "task_description": "move the email form elements to the front and center"
     }
 ]
