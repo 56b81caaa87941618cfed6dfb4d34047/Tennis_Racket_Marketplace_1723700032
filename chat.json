@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Would you like the rock background to have a specific color tone to match the overall color scheme of the website?\", \"option1\": \"Yes, please use a warm color tone.\", \"option2\": \"No, a natural look is preferred.\"}, {\"question 2\": \"Should the background image be realistic or stylized to fit into the marketplace design?\", \"option1\": \"Realistic, to give a natural feel.\", \"option2\": \"Stylized, to make it blend well with the website's design.\"}], \"input_token_count\": 339, \"output_token_count\": 119, \"time_taken\": \"0:00:02.568121\"}",
+        "message_id": "guest16082024072715",
+        "timestamp": "16082024072723",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_acknowledge",
         "content": "Acknowledged, I will change the background to a pile of rocks.",
         "message_id": "guest16082024072715",
