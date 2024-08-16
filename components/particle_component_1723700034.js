@@ -19,10 +19,6 @@
 </template>
 
 <script>
-// Example child component
-const ChildComponent = {
-  template: `<div>A Child Component</div>`,
-};
 
 // Example mixin
 const exampleMixin = {
@@ -38,9 +34,6 @@ const exampleMixin = {
 
 export default {
   name: "ExampleComponent",
-  components: {
-    ChildComponent,
-  },
   mixins: [exampleMixin],
   props: {
     title: {
