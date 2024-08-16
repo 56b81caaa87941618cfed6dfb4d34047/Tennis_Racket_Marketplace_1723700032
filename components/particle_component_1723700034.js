@@ -1,65 +1,66 @@
-/* Summary: This is a canvas element for displaying a purple glow and a particle animation in the background of the hero component.
-*/
-
-Vue.component("particle_component_1723700034", {
-    template: `
-    <div id="illustration"
-        class="absolute inset-0 -z-10 -mx-28 rounded-b-[5rem] pointer-events-none overflow-hidden"
-        style="z-index:0" aria-hidden="true">
-        <div id="illustration-inner" class="absolute left-1/2 -translate-x-1/2 bottom-0 -z-10">
-            <svg id="illustration-svg" xmlns="http://www.w3.org/2000/svg" class="max-w-none"
-                xmlns:xlink="http://www.w3.org/1999/xlink" width="2146" height="744">
-                <defs>
-                    <linearGradient id="gradient1" x1="43.176%" x2="50%" y1="12.436%" y2="97.744%">
-                        <stop offset="0%" :stop-color="gradientOnePrimaryStopColor" />
-                        <stop offset="100%" :stop-color="gradientSecondaryStopColor" />
-                    </linearGradient>
-                    <linearGradient id="gradient2" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
-                        <stop offset="0%" :stop-color="gradientSecondaryStopColor" />
-                        <stop offset="100%" :stop-color="gradientSecondaryStopColor" stop-opacity="0" />
-                    </linearGradient>
-                    <filter id="filter1" width="145.2%" height="187%" x="-22.6%" y="-43.5%"
-                        filterUnits="objectBoundingBox">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="50" />
-                    </filter>
-                    <filter id="filter2" width="165.1%" height="170.3%" x="-32.5%" y="-35.1%"
-                        filterUnits="objectBoundingBox">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="50" />
-                    </filter>
-                    <radialGradient id="radial-gradient" cx="50%" cy="100%" r="77.678%" fx="50%"
-                        fy="100%" gradientTransform="matrix(0 -1 .37746 0 .123 1.5)">
-                        <stop offset="0%" :stop-color="radialGradientPrimaryColor" />
-                        <stop offset="22.35%" :stop-color="radialGradientSecondaryColor" />
-                        <stop offset="100%" :stop-color="radialGradientTertiaryColor" stop-opacity="0" />
-                    </radialGradient>
-                    <path id="path1" d="M0 0h2440v921H0z" />
-                </defs>
-                <g fill="none" fill-rule="evenodd" transform="translate(-140 -177)">
-                    <mask id="mask1" fill="#fff">
-                        <use xlink:href="#path1" />
-                    </mask>
-                    <g mask="url(#mask1)">
-                        <path id="radial-path" fill="url(#radial-gradient)" d="M0 0h2440v921H0z" />
-                        <path id="gradient-path1" fill="url(#gradient1)" fill-rule="nonzero"
-                            d="M1975.72 781.763c-3.682-3-8.757-3.61-13.042-1.568a12.323 12.323 0 0 0-7.014 11.129v98.57h-430.368c-6.79 0-12.296 5.516-12.296 12.321v98.57c0 6.805 5.505 12.321 12.296 12.321h430.368v98.57a12.323 12.323 0 0 0 7.014 11.129 12.276 12.276 0 0 0 13.042-1.568l196.74-160.176a12.33 12.33 0 0 0 4.54-9.561 12.33 12.33 0 0 0-4.54-9.561l-196.74-160.176Z"
-                            filter="url(#filter1)" />
-                        <path id="gradient-path2" fill="url(#gradient2)" d="m913 274 461 369-284 58z"
-                            filter="url(#filter2)" />
-                    </g>
-                </g>
-            </svg>
+<template>
+  <!-- Features list -->
+  <div id="features-grid" class="grid md:grid-cols-3 gap-8 md:gap-12 bg-white p-5">
+    <!-- Feature 1 -->
+    <div id="feature-1">
+      <div id="feature-1-header" class="flex items-center space-x-2 mb-1">
+        <svg id="feature-1-icon" class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+          <path
+            d="M7.999 2.34a4.733 4.733 0 0 0-6.604 6.778l5.904 5.762a1 1 0 0 0 1.4 0l5.915-5.77a4.733 4.733 0 0 0-6.615-6.77Zm5.208 5.348-5.208 5.079-5.2-5.07a2.734 2.734 0 0 1 3.867-3.864c.182.19.335.404.455.638a1.04 1.04 0 0 0 1.756 0 2.724 2.724 0 0 1 5.122 1.294 2.7 2.7 0 0 1-.792 1.923Z"
+            :class="textFillStylePrimary"
+          />
+        </svg>
+        <div class="flex" id="feature-1-title-container">
+          <h4 id="feature-1-title" class="flex-1 font-medium" :class="textSecondaryStyle">Extensive Racket Selection</h4>
         </div>
-    </div>`,
-        data() {
-            return {
-                expanded: false, 
-                tab: null,
-                gradientOnePrimaryStopColor:"#A855F7",
-                gradientSecondaryStopColor: "#6366F1",
-                radialGradientPrimaryColor: "#E9D5FF",
-                radialGradientSecondaryColor: "#A855F7",
-                radialGradientTertiaryColor: "#0F172A"
-            };  
-        },
-    });
-                    
+      </div>
+      <div class="flex" id="feature-1-description-container">
+        <p id="feature-1-description" class="flex-1 text-sm" :class="textPrimaryStyle">
+          Browse through a wide range of tennis rackets from top brands, ensuring you find the perfect match for your playing style.
+        </p>
+      </div>
+    </div>
+
+    <!-- Repeat the above block for feature 2 to 6, changing the id, title, description, and SVG as needed -->
+    <!-- Feature 2 -->
+    <div id="feature-2">
+      <div id="feature-2-header" class="flex items-center space-x-2 mb-1">
+        <svg id="feature-2-icon" class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+          <path
+            d="M11 0c1.3 0 2.6.5 3.5 1.5 1 .9 1.5 2.2 1.5 3.5 0 1.3-.5 2.6-1.4 3.5l-1.2 1.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.1-1.2c.6-.5.9-1.3.9-2.1s-.3-1.6-.9-2.2C12 1.7 10 1.7 8.9 2.8L7.7 4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.2-1.1C8.4.5 9.7 0 11 0ZM8.3 12c.4-.4 1-.5 1.4-.1.4.4.4 1 0 1.4l-1.2 1.2C7.6 15.5 6.3 16 5 16c-1.3 0-2.6-.5-3.5-1.5C.5 13.6 0 12.3 0 11c0-1.3.5-2.6 1.5-3.5l1.1-1.2c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.9 8.9c-.6.5-.9 1.3-.9 2.1s.3 1.6.9 2.2c1.1 1.1 3.1 1.1 4.2 0L8.3 12Zm1.1-6.8c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-4.2 4.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l4.2-4.2Z"
+            :class="textFillStylePrimary"
+          />
+        </svg>
+        <div class="flex" id="feature-2-title-container">
+          <h4 id="feature-2-title" class="flex-1 font-medium" :class="textSecondaryStyle">Expert Recommendations</h4>
+        </div>
+      </div>
+      <div class="flex" id="feature-2-description-container">
+        <p id="feature-2-description" class="flex-1 text-sm" :class="textPrimaryStyle">
+          Receive personalized racket suggestions based on your skill level, playing frequency, and preferred court surface.
+        </p>
+      </div>
+    </div>
+
+    <!-- Continue for features 3 to 6 -->
+  </div>
+</template>
+
+<script>
+export default {
+  name: "PurpleFeatureGridComponent",
+  data() {
+    return {
+      expanded: false,
+      tab: null,
+      textFillStylePrimary: "fill-slate-300",
+      textPrimaryStyle: "text-slate-400",
+      textSecondaryStyle: "text-slate-50",
+    };
+  },
+};
+</script>
+
+<style scoped>
+/* You can add component-specific styles here, which will be scoped to this component */
+</style>
