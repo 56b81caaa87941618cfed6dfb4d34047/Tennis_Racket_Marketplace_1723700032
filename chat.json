@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Where would you like the email form to be positioned within the website?\", \"option1\": \"On the Contact Us page\", \"option2\": \"As a popup that appears after a certain user action or time\"}, {\"question 2\": \"What information do you want to collect with the email form?\", \"option1\": \"Basic contact details (Name, Email, Message)\", \"option2\": \"Extended information (Name, Email, Phone number, Specific inquiry type)\"}], \"input_token_count\": 253, \"output_token_count\": 110, \"time_taken\": \"0:00:04.901844\"}",
+        "message_id": "guest16082024074317",
+        "timestamp": "16082024074327",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_ui_checklist",
         "content": "{\"status\": \"success\", \"ui_elements_checklist\": [{\"feature\": \"Implement an interactive background feature allowing users to select or upload their desired background image\", \"checked\": true}, {\"feature\": \"Add a dedicated 'Background Gallery' section with a collection of high-quality images (including piles of rocks, garbage bags, and various textures)\", \"checked\": false}, {\"feature\": \"Incorporate a 'Live Preview' functionality to see changes in real-time before applying\", \"checked\": true}, {\"feature\": \"Create a 'User Preferences' page for saving and managing selected backgrounds or themes\", \"checked\": false}, {\"feature\": \"Enable an 'Auto-Adjust' feature for text and element contrasts based on the background chosen\", \"checked\": true}, {\"feature\": \"Offer a 'Reset to Default' option for backgrounds in case users wish to revert to the original design\", \"checked\": false}], \"input_token_count\": 490, \"output_token_count\": 185, \"time_taken\": \"0:00:06.367801\"}",
         "message_id": "guest16082024073533",
