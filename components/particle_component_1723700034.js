@@ -80,7 +80,6 @@ export default {
     // End of submitForm method
   },
 };
-};
 </script>
 
 <style scoped>
