@@ -3,6 +3,7 @@
   <div id="features-grid" class="grid md:grid-cols-3 gap-8 md:gap-12 bg-white p-5">
     <!-- Feature 1 -->
     <div id="feature-1">
+      <img src="https://raw.githubusercontent.com/56b81caaa87941618cfed6dfb4d34047/Tennis_Racket_Marketplace_1723700032/main/images/3f07e129d4944165af28ebe36e8aab99.jpeg" alt="Feature 1 Image" class="mb-4" />
       <div id="feature-1-header" class="flex items-center space-x-2 mb-1">
         <svg id="feature-1-icon" class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
           <path
