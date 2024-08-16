@@ -45,6 +45,16 @@
 
     <!-- Continue for features 3 to 6 -->
   </div>
+
+  <!-- Email Form -->
+  <div class="mt-8 p-5 bg-white rounded-lg shadow-md">
+    <h3 class="text-xl font-semibold mb-4" :class="textSecondaryStyle">Subscribe to Our Newsletter</h3>
+    <form @submit.prevent="submitForm" class="flex flex-col space-y-4">
+      <input v-model="email" type="email" placeholder="Enter your email" class="p-2 border border-gray-300 rounded" required>
+      <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Subscribe</button>
+    </form>
+  </div>
+</template>
 </template>
 
 <script>
@@ -57,8 +67,20 @@ export default {
       textFillStylePrimary: "fill-slate-300",
       textPrimaryStyle: "text-slate-400",
       textSecondaryStyle: "text-slate-50",
+      email: "",
     };
   },
+  methods: {
+    // Start of submitForm method
+    submitForm() {
+      // Here you would typically send the email to your backend
+      console.log("Submitted email:", this.email);
+      // Reset the form
+      this.email = "";
+    },
+    // End of submitForm method
+  },
+};
 };
 </script>
 
