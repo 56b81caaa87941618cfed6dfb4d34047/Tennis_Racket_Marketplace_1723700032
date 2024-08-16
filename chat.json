@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_ui_checklist",
+        "content": "{\"status\": \"success\", \"ui_elements_checklist\": [{\"feature\": \"Add a customizable background feature allowing users to choose their preferred backgrounds such as tennis courts, sporting events, etc.\", \"checked\": true}, {\"feature\": \"Implement a 'Dark Mode' option for better nighttime viewing with a toggle switch in the settings\", \"checked\": false}, {\"feature\": \"Introduce a 'Favorites' feature where users can bookmark their preferred rackets or sellers\", \"checked\": true}, {\"feature\": \"Implement an advanced search filter for rackets by grip size, weight, and brand\", \"checked\": true}, {\"feature\": \"Add a section for user reviews and ratings on each product page\", \"checked\": false}, {\"feature\": \"Create a 'Racket Comparison' tool to compare features of different rackets side by side\", \"checked\": false}], \"input_token_count\": 293, \"output_token_count\": 175, \"time_taken\": \"0:00:07.587926\"}",
+        "message_id": "guest16082024072715",
+        "timestamp": "16082024072728",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_qna",
         "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Would you like the rock background to have a specific color tone to match the overall color scheme of the website?\", \"option1\": \"Yes, please use a warm color tone.\", \"option2\": \"No, a natural look is preferred.\"}, {\"question 2\": \"Should the background image be realistic or stylized to fit into the marketplace design?\", \"option1\": \"Realistic, to give a natural feel.\", \"option2\": \"Stylized, to make it blend well with the website's design.\"}], \"input_token_count\": 339, \"output_token_count\": 119, \"time_taken\": \"0:00:02.568121\"}",
         "message_id": "guest16082024072715",
