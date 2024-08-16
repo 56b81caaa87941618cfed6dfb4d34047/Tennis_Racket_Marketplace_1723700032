@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_acknowledge",
+        "content": "Sure, I can change the background to be an alligator.",
+        "message_id": "guest16082024005651",
+        "timestamp": "16082024005652",
+        "component_file_name": "",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "user",
         "content": "change this background to be an alligator",
         "message_id": "guest16082024005651",
