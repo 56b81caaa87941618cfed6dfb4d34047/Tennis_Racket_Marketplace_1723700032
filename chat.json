@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_ui_checklist",
+        "content": "{\"status\": \"success\", \"ui_elements_checklist\": [{\"feature\": \"Implement an interactive background feature allowing users to select or upload their desired background image\", \"checked\": true}, {\"feature\": \"Add a dedicated 'Background Gallery' section with a collection of high-quality images (including piles of rocks, garbage bags, and various textures)\", \"checked\": false}, {\"feature\": \"Incorporate a 'Live Preview' functionality to see changes in real-time before applying\", \"checked\": true}, {\"feature\": \"Create a 'User Preferences' page for saving and managing selected backgrounds or themes\", \"checked\": false}, {\"feature\": \"Enable an 'Auto-Adjust' feature for text and element contrasts based on the background chosen\", \"checked\": true}, {\"feature\": \"Offer a 'Reset to Default' option for backgrounds in case users wish to revert to the original design\", \"checked\": false}], \"input_token_count\": 490, \"output_token_count\": 185, \"time_taken\": \"0:00:06.367801\"}",
+        "message_id": "guest16082024073533",
+        "timestamp": "16082024073545",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_qna",
         "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you want the garabage bags background to be a realistic photo or an illustrated design?\", \"option1\": \"Realistic photo\", \"option2\": \"Illustrated design\"}, {\"question 2\": \"Should the garabage bags background cover the entire site or be applied to specific sections only?\", \"option1\": \"Entire site\", \"option2\": \"Specific sections only\"}], \"input_token_count\": 536, \"output_token_count\": 94, \"time_taken\": \"0:00:03.141350\"}",
         "message_id": "guest16082024073533",
