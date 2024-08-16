@@ -54,5 +54,11 @@
         "content": "Sure, I can change the background to be an alligator.",
         "timestamp": "16082024005652",
         "message_id": "guest16082024005651"
+    },
+    {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you prefer a realistic alligator background or a stylized/graphic representation?\", \"option1\": \"Realistic alligator texture\", \"option2\": \"Stylized/graphic alligator design\"}, {\"question 2\": \"Should the alligator background cover the entire page or be a fixed element in a specific section?\", \"option1\": \"Cover the entire page\", \"option2\": \"Fixed element in a specific section\"}], \"input_token_count\": 314, \"output_token_count\": 102, \"time_taken\": \"0:00:02.323781\"}",
+        "timestamp": "16082024005658",
+        "message_id": "guest16082024005651"
     }
 ]
