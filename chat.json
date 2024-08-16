@@ -1,5 +1,14 @@
 [
     {
+        "role": "user",
+        "content": "Change the background image to be a pile of rocks",
+        "message_id": "guest16082024085506",
+        "timestamp": "16082024085506",
+        "component_file_name": "particle_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_acknowledge",
         "content": "Acknowledged, working on changing background to a pile of rocks.",
         "message_id": "guest16082024085506",
