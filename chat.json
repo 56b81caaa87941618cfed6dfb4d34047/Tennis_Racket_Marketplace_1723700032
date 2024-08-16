@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_acknowledge",
+        "content": "Acknowledged, working on changing background to a pile of rocks.",
+        "message_id": "guest16082024085506",
+        "timestamp": "16082024085507",
+        "component_file_name": "",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_qna",
         "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Where would you like the email form to be positioned within the website?\", \"option1\": \"On the Contact Us page\", \"option2\": \"As a popup that appears after a certain user action or time\"}, {\"question 2\": \"What information do you want to collect with the email form?\", \"option1\": \"Basic contact details (Name, Email, Message)\", \"option2\": \"Extended information (Name, Email, Phone number, Specific inquiry type)\"}], \"input_token_count\": 253, \"output_token_count\": 110, \"time_taken\": \"0:00:04.901844\"}",
         "message_id": "guest16082024074317",
