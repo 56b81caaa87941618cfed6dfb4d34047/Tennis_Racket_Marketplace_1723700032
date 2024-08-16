@@ -15,8 +15,6 @@
       <button type="submit">Submit</button>
     </form>
 
-    <!-- Display a child component -->
-    <child-component></child-component>
   </div>
 </template>
 
