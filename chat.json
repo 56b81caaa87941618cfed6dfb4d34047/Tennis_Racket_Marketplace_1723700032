@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_acknowledge",
+        "content": "Acknowledged, I will change the background to a pile of rocks.",
+        "message_id": "guest16082024072715",
+        "timestamp": "16082024072716",
+        "component_file_name": "",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "user",
         "content": "Change the background to be a pile of rocks",
         "message_id": "guest16082024072715",
