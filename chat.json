@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_acknowledge",
+        "content": "Got it, updating the background image to a giraffe.",
+        "message_id": "guest17082024041026",
+        "timestamp": "17082024041026",
+        "component_file_name": "",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "user",
         "content": "Change the background image to a giraffe",
         "message_id": "guest17082024041026",
