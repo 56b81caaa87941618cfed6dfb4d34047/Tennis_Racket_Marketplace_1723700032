@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Would you prefer a realistic photograph of a giraffe or a graphic illustration for the new background image?\", \"option1\": \"Realistic photograph\", \"option2\": \"Graphic illustration\"}, {\"question 2\": \"Do you want the giraffe background to complement a specific color scheme or theme already established on your website?\", \"option1\": \"Yes, match the existing color scheme/theme\", \"option2\": \"No, the giraffe image can introduce a new color scheme/theme\"}], \"input_token_count\": 622, \"output_token_count\": 111, \"time_taken\": \"0:00:03.027096\"}",
+        "message_id": "guest17082024041026",
+        "timestamp": "17082024041030",
+        "component_file_name": "purple_header_component_1723700034",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_acknowledge",
         "content": "Got it, updating the background image to a giraffe.",
         "message_id": "guest17082024041026",
