@@ -1,5 +1,14 @@
 [
     {
+        "role": "chat_qna",
+        "content": "{\"status\": \"success\", \"qna\": [{\"question 1\": \"Do you want the dinosaur image to replace an existing image, or should it be added as a new element on the page?\", \"option1\": \"Replace an existing image\", \"option2\": \"Add as a new element\"}, {\"question 2\": \"Should the dinosaur image be thematic with the tennis racket marketplace, such as a dinosaur holding a racket, or is a generic dinosaur image acceptable?\", \"option1\": \"Thematic with a dinosaur holding a racket\", \"option2\": \"Generic dinosaur image is acceptable\"}], \"input_token_count\": 268, \"output_token_count\": 119, \"time_taken\": \"0:00:04.114738\"}",
+        "message_id": "guest24082024011646",
+        "timestamp": "24082024011651",
+        "component_file_name": "simple_header_component_1724462188",
+        "div_id": "",
+        "div_action": ""
+    },
+    {
         "role": "chat_acknowledge",
         "content": "Got it, working on changing the image to a dinosaur.",
         "message_id": "guest24082024011646",
