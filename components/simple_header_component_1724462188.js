@@ -7,7 +7,7 @@ Summary: The header component is a nav bar on top of the page -- it contains the
         <nav id="nav-bar" class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
             <div id="nav-container" class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a id="logo-link" href="#" class="flex items-center">
-                    <img id="logo-image" src="./images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
+                    <img id="logo-image" src="https://raw.githubusercontent.com/56b81caaa87941618cfed6dfb4d34047/Tennis_Racket_Marketplace_1723700032/main/images/0b745f65ae2f4f2b9b4c0dac0e1cab7c.jpeg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
                     <span id="app-name" class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                         SwingMart
                     </span>
