@@ -3,12 +3,12 @@ Summary: The header component is a nav bar on top of the page -- it contains the
 -->
 
 <template>
-    <header id="header-section" style="min-height: 110px" class="w-full bg-gradient-to-r from-pink-500 via-purple-600 to-black bg-opacity-70 backdrop-filter backdrop-blur-lg">
-        <nav id="nav-bar" class="py-2.5 rounded-lg shadow-lg">
+    <header id="header-section" style="min-height: 110px" class="w-full">
+        <nav id="nav-bar" class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
             <div id="nav-container" class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a id="logo-link" href="#" class="flex items-center">
                     <img id="logo-image" src="https://raw.githubusercontent.com/56b81caaa87941618cfed6dfb4d34047/Tennis_Racket_Marketplace_1723700032/main/images/0b745f65ae2f4f2b9b4c0dac0e1cab7c.jpeg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
-                    <span id="app-name" class="self-center text-xl font-semibold whitespace-nowrap text-white">
+                    <span id="app-name" class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                         SwingMart
                     </span>
                 </a>
@@ -17,7 +17,7 @@ Summary: The header component is a nav bar on top of the page -- it contains the
                         id="collapse-button"
                         data-collapse-toggle="mobile-menu-2"
                         type="button"
-                        class="inline-flex items-center p-2 ml-1 text-sm text-white rounded-lg lg:hidden hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         aria-controls="mobile-menu-2"
                         aria-expanded="false"
                     >
@@ -55,7 +55,7 @@ Summary: The header component is a nav bar on top of the page -- it contains the
                         <li id="nav-item-home">
                             <a
                                 href="#"
-                                class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded-lg lg:bg-transparent lg:text-pink-300 lg:p-0 hover:bg-pink-600 lg:hover:bg-transparent lg:hover:text-white transition-colors duration-300"
+                                class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white"
                                 aria-current="page"
                             >
                                 Pro Tour Racket
@@ -64,7 +64,7 @@ Summary: The header component is a nav bar on top of the page -- it contains the
                         <li id="nav-item-1">
                             <a
                                 href="#"
-                                class="block py-2 pl-3 pr-4 text-white rounded-lg hover:bg-pink-600 lg:hover:bg-transparent lg:hover:text-white lg:p-0 transition-colors duration-300"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                             >
                                 Beginner's Choice Racket
                             </a>
@@ -72,7 +72,7 @@ Summary: The header component is a nav bar on top of the page -- it contains the
                         <li id="nav-item-2">
                             <a
                                 href="#"
-                                class="block py-2 pl-3 pr-4 text-white rounded-lg hover:bg-pink-600 lg:hover:bg-transparent lg:hover:text-white lg:p-0 transition-colors duration-300"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                             >
                                 Junior Champion Racket
                             </a>
@@ -80,7 +80,7 @@ Summary: The header component is a nav bar on top of the page -- it contains the
                         <li id="nav-item-3">
                             <a
                                 href="#"
-                                class="block py-2 pl-3 pr-4 text-white rounded-lg hover:bg-pink-600 lg:hover:bg-transparent lg:hover:text-white lg:p-0 transition-colors duration-300"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                             >
                                 Power Serve Racket
                             </a>
