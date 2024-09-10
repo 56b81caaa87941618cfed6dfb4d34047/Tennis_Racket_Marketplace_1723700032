@@ -7,7 +7,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'PurpleBackgroundCta',
   data() {
     return {
@@ -19,7 +21,7 @@ export default {
       this.title = 'Title Changed!';
     }
   }
-};
+});
 </script>
 
 <style scoped>
@@ -30,3 +32,4 @@ export default {
   border-radius: 5px;
 }
 </style>
+
