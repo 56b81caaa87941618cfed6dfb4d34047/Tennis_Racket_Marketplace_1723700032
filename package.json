@@ -1,0 +1,25 @@
+{
+  "name": "tennis-racket-marketplace",
+  "version": "1.0.0",
+  "description": "A marketplace for tennis rackets featuring a dynamic Vue 3 frontend.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "~4.5.0"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "marketplace",
+    "tennis rackets"
+  ],
+  "author": "",
+  "license": "ISC"
+}
