@@ -1,10 +1,12 @@
 <template>
-  <div id="snake-game">
+  <div id="snake-game" class="flex flex-col justify-center items-center h-screen bg-gray-100">
     <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <div id="score-display">Score: {{ score }}</div>
-    <button @click="startGame">Start</button>
-    <button @click="pauseGame">Pause</button>
-    <button @click="restartGame">Restart</button>
+    <div id="score-display" class="mt-4 mb-2 text-lg">Score: {{ score }}</div>
+    <div class="flex mt-4 gap-2">
+      <button @click="startGame" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Start</button>
+      <button @click="pauseGame" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Pause</button>
+      <button @click="restartGame" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Restart</button>
+    </div>
   </div>
 </template>
 
@@ -57,7 +59,7 @@ export default {
       this.score = 0;
       this.startGame();
     },
-   gameLoop() {
+    gameLoop() {
       this.updateSnakePosition();
       this.checkCollision();
       this.drawGame();
@@ -82,6 +84,13 @@ export default {
         clearInterval(this.gameInterval);
         alert('Game Over');
       }
+      for (let i = 1; i < this.snake.length; i++) {
+        if (head.x === this.snake[i].x && head.y === this.snake[i].y) {
+          clearInterval(this.gameInterval);
+          alert('Game Over');
+          break;
+        }
+      }
     },
     drawGame() {
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -94,7 +103,7 @@ export default {
     },
   },
   mounted() {
-    this.startGame();
+    // this.startGame(); // Commented out to prevent auto-start on mount
   }
 };
 </script>
@@ -106,7 +115,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
 }
 button {
   margin: 5px;
@@ -123,11 +132,13 @@ button:hover {
   background-color: #0056b3;
 }
 canvas {
-  border: 2px solid #000;
+  border: 3px solid #000;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #score-display {
   margin: 10px 0;
   font-size: 24px;
-  color: #333;
+  color: #444;
 }
 </style>

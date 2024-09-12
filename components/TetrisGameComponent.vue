@@ -1,20 +1,18 @@
 <template>
-  <div class="tetris-game">
-    <h2>Tetris Game</h2>
-    <div class="score-display">
-      Score: {{ score }}
-    </div>
+  <div class="tetris-game flex flex-col items-center justify-center p-5 max-w-lg bg-gray-100 rounded-lg shadow-lg">
+    <h2 class="text-xl font-bold mb-5">Tetris Game</h2>
+    <div class="score-display mb-4 text-lg">Score: {{ score }}</div>
     <div class="tetris-grid">
       <div v-for="(row, rowIndex) in renderedGrid" :key="rowIndex" class="tetris-row">
         <div v-for="(cell, cellIndex) in row" :key="cellIndex" :class="['tetris-cell', cell ? 'filled' : '']"></div>
       </div>
     </div>
-    <div class="controls">
-      <button @click="startGame">Start</button>
-      <button @click="moveLeft">Left</button>
-      <button @click="moveRight">Right</button>
-      <button @click="rotate">Rotate</button>
-      <button @click="drop">Drop</button>
+    <div class="controls mt-4 flex gap-2">
+      <button @click="startGame" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Start</button>
+      <button @click="moveLeft" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Left</button>
+      <button @click="moveRight" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Right</button>
+      <button @click="rotate" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Rotate</button>
+      <button @click="drop" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Drop</button>
     </div>
   </div>
 </template>
@@ -204,8 +202,10 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 600px;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -214,11 +214,13 @@ export default {
   grid-template-rows: repeat(20, 20px);
   grid-template-columns: repeat(10, 20px);
   gap: 1px;
-  background-color: #333;
+  background-color: #444;
+  margin-bottom: 15px;
 }
 .score-display {
   font-size: 1.2em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #333;
 }
 .tetris-row {
   display: contents;
@@ -227,21 +229,24 @@ export default {
   width: 20px;
   height: 20px;
   background-color: #fff;
+  border-radius: 2px;
 }
 .tetris-cell.filled {
   background-color: #3498db;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
 }
 .controls {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .controls button {
   margin: 0 5px;
-  padding: 5px 10px;
+  padding: 8px 15px;
   background-color: #3498db;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 .controls button:hover {
   background-color: #2980b9;
