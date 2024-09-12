@@ -55,6 +55,7 @@ export default {
       clearInterval(this.gameInterval);
       this.snake = [{ x: 10, y: 10 }];
       this.food = { x: Math.floor(Math.random() * this.gridSize), y: Math.floor(Math.random() * this.gridSize) };
+      this.snake.length = 1; // Ensure snake resets to initial size
       this.direction = 'RIGHT';
       this.score = 0;
       this.startGame();
@@ -75,10 +76,13 @@ export default {
     },
     checkCollision() {
       const head = this.snake[0];
-      if (head.x === this.food.x && head.y === this.food.y) {
-        this.snake.push(this.food);
+      // Corrected logic to handle food consumption
+      if ((head.x === this.food.x) && (head.y === this.food.y)) {
+        // Increase the size of the snake by adding a new head instead of the food
+        this.snake.push({...this.food});
         this.food = { x: Math.floor(Math.random() * this.gridSize), y: Math.floor(Math.random() * this.gridSize) };
         this.score += 10;
+        return; // Ensure the game loop continues after eating food
       }
       if (head.x >= this.gridSize || head.y >= this.gridSize || head.x < 0 || head.y < 0) {
         clearInterval(this.gameInterval);
