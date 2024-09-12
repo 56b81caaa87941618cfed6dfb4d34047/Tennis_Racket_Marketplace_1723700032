@@ -7,6 +7,7 @@
     <PurpleBackgroundCtaComponent />
     <ParticleComponent />
     <DarkFooterComponent />
+    <TetrisGameComponent />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import PurpleFeatureGridComponent from '../components/purple_feature_grid_compon
 import PurpleBackgroundCtaComponent from '../components/purple_background_cta_component_1723700034.vue';
 import ParticleComponent from '../components/particle_component_1723700034.vue';
 import DarkFooterComponent from '../components/dark_footer_component_1723700034.vue';
+import TetrisGameComponent from './components/TetrisGameComponent.vue';
 
 export default {
   components: {
@@ -28,6 +30,7 @@ export default {
     PurpleBackgroundCtaComponent,
     ParticleComponent,
     DarkFooterComponent,
+    TetrisGameComponent,
   },
 };
 </script>
