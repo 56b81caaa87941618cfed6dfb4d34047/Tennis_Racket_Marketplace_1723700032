@@ -8,6 +8,7 @@
     <ParticleComponent />
     <DarkFooterComponent />
     <TetrisGameComponent />
+    <SnakeGameComponent /> <!-- Added the Snake game component here -->
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import PurpleBackgroundCtaComponent from '../components/purple_background_cta_co
 import ParticleComponent from '../components/particle_component_1723700034.vue';
 import DarkFooterComponent from '../components/dark_footer_component_1723700034.vue';
 import TetrisGameComponent from './components/TetrisGameComponent.vue';
+import SnakeGameComponent from './components/SnakeGameComponent.vue'; // Importing the Snake game component
 
 export default {
   components: {
@@ -31,6 +33,7 @@ export default {
     ParticleComponent,
     DarkFooterComponent,
     TetrisGameComponent,
+    SnakeGameComponent, // Registering the Snake game component
   },
 };
 </script>
