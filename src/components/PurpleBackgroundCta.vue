@@ -1,11 +1,14 @@
-Vue.component("purple_header_component_1723700034", {
-    template: `
-    <div>
+<template>
+  <div>
     <h1>{{ title }}</h1>
     <button @click="changeTitle">Change Title</button>
-    </div>
-    `,
-data() {
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'PurpleBackgroundCta',
+  data() {
     return {
       title: 'Hello from dynamic SFC!',
     };
@@ -15,4 +18,5 @@ data() {
       this.title = 'Title Changed!';
     },
   },
-    });
+};
+</script>

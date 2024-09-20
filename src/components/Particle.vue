@@ -1,5 +1,3 @@
-<!-- some comment here -->
-
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
     <div class="bg-white p-8 rounded-lg shadow-md w-96">
@@ -13,16 +11,14 @@
       <p class="text-lg mb-4">Computed Count: {{ computedCount }}</p>
       <p class="text-lg mb-4">Email (watching for changes): {{ email }}</p>
       
-      <img src="https://raw.githubusercontent.com/56b81caaa87941618cfed6dfb4d34047/Tennis_Racket_Marketplace_1723700032/main/images/5eeb1c90d378439b9d2858119698da88.jpeg" alt="Description of image" class="w-full rounded-md shadow-md" />
+      <img src="/images/5eeb1c90d378439b9d2858119698da88.jpeg" alt="Description of image" class="w-full rounded-md shadow-md" />
     </div>
   </div>
 </template>
 
 <script>
-
-
 export default {
-  name: "ExampleComponent",
+  name: "Particle",
   props: {
     title: {
       type: String,

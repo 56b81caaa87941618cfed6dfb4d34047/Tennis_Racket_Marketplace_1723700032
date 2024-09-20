@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'DarkFooter',
   data() {
     return {
       title: 'Hello from dynamic SFC!',
