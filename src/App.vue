@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <SimpleHeader />
+    <TetrisGame />
     <PurpleHero />
     <PurpleFeatureGrid />
     <PurpleBackgroundCta />
@@ -11,6 +12,7 @@
 
 <script>
 import SimpleHeader from './components/SimpleHeader.vue'
+import TetrisGame from './components/TetrisGame.vue'
 import PurpleHero from './components/PurpleHero.vue'
 import PurpleFeatureGrid from './components/PurpleFeatureGrid.vue'
 import PurpleBackgroundCta from './components/PurpleBackgroundCta.vue'
@@ -21,6 +23,7 @@ export default {
   name: 'App',
   components: {
     SimpleHeader,
+    TetrisGame,
     PurpleHero,
     PurpleFeatureGrid,
     PurpleBackgroundCta,
