@@ -6,7 +6,9 @@
       <p>Level: {{ level }}</p>
     </div>
     <div class="game-board">
-      <!-- Game board will be rendered here -->
+      <div v-for="(row, rowIndex) in gameBoard" :key="rowIndex" class="row">
+        <div v-for="(cell, cellIndex) in row" :key="cellIndex" :class="['cell', { filled: cell }]"></div>
+      </div>
     </div>
     <div class="game-controls">
       <button @click="startGame" :disabled="gameRunning">Start Game</button>
@@ -21,38 +23,178 @@
 <script>
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
 
+const BOARD_WIDTH = 10;
+const BOARD_HEIGHT = 20;
+const TICK_INTERVAL = 1000;
+
+const TETROMINOS = [
+  [[1, 1, 1, 1]],
+  [[1, 1], [1, 1]],
+  [[1, 1, 1], [0, 1, 0]],
+  [[1, 1, 1], [1, 0, 0]],
+  [[1, 1, 1], [0, 0, 1]],
+  [[1, 1, 0], [0, 1, 1]],
+  [[0, 1, 1], [1, 1, 0]]
+];
+
 export default {
   name: 'TetrisGame',
   setup() {
     const score = ref(0);
     const level = ref(1);
     const gameRunning = ref(false);
-    const gameBoard = reactive([]);
+    const gameBoard = ref(Array(BOARD_HEIGHT).fill().map(() => Array(BOARD_WIDTH).fill(0)));
 
-    // Game state
     const gameState = reactive({
       currentPiece: null,
-      nextPiece: null,
-      // Add other necessary state variables
+      currentPosition: { x: 0, y: 0 },
+      tickInterval: null
     });
 
-    // Game methods
+    const createNewPiece = () => {
+      const pieceIndex = Math.floor(Math.random() * TETROMINOS.length);
+      gameState.currentPiece = TETROMINOS[pieceIndex];
+      gameState.currentPosition = {
+        x: Math.floor((BOARD_WIDTH - gameState.currentPiece[0].length) / 2),
+        y: 0
+      };
+    };
+
+    const drawPiece = () => {
+      const newBoard = gameBoard.value.map(row => [...row]);
+      gameState.currentPiece.forEach((row, y) => {
+        row.forEach((value, x) => {
+          if (value) {
+            const boardY = y + gameState.currentPosition.y;
+            const boardX = x + gameState.currentPosition.x;
+            if (boardY >= 0 && boardY < BOARD_HEIGHT && boardX >= 0 && boardX < BOARD_WIDTH) {
+              newBoard[boardY][boardX] = value;
+            }
+          }
+        });
+      });
+      gameBoard.value = newBoard;
+    };
+
+    const clearPiece = () => {
+      gameState.currentPiece.forEach((row, y) => {
+        row.forEach((value, x) => {
+          if (value) {
+            const boardY = y + gameState.currentPosition.y;
+            const boardX = x + gameState.currentPosition.x;
+            if (boardY >= 0 && boardY < BOARD_HEIGHT && boardX >= 0 && boardX < BOARD_WIDTH) {
+              gameBoard.value[boardY][boardX] = 0;
+            }
+          }
+        });
+      });
+    };
+
+    const isValidMove = (piece, position) => {
+      return piece.every((row, y) => 
+        row.every((value, x) => {
+          const boardY = y + position.y;
+          const boardX = x + position.x;
+          return (
+            value === 0 ||
+            (boardY >= 0 &&
+             boardY < BOARD_HEIGHT &&
+             boardX >= 0 &&
+             boardX < BOARD_WIDTH &&
+             gameBoard.value[boardY][boardX] === 0)
+          );
+        })
+      );
+    };
+
+    const movePiece = (direction) => {
+      clearPiece();
+      const newPosition = { ...gameState.currentPosition };
+      if (direction === 'left') newPosition.x -= 1;
+      if (direction === 'right') newPosition.x += 1;
+      if (direction === 'down') newPosition.y += 1;
+
+      if (isValidMove(gameState.currentPiece, newPosition)) {
+        gameState.currentPosition = newPosition;
+        drawPiece();
+      } else if (direction === 'down') {
+        drawPiece();
+        lockPiece();
+      } else {
+        drawPiece();
+      }
+    };
+
+    const rotatePiece = () => {
+      clearPiece();
+      const rotatedPiece = gameState.currentPiece[0].map((_, index) =>
+        gameState.currentPiece.map(row => row[index]).reverse()
+      );
+      if (isValidMove(rotatedPiece, gameState.currentPosition)) {
+        gameState.currentPiece = rotatedPiece;
+      }
+      drawPiece();
+    };
+
+    const lockPiece = () => {
+      clearPiece();
+      gameState.currentPiece.forEach((row, y) => {
+        row.forEach((value, x) => {
+          if (value) {
+            const boardY = y + gameState.currentPosition.y;
+            const boardX = x + gameState.currentPosition.x;
+            if (boardY >= 0 && boardY < BOARD_HEIGHT && boardX >= 0 && boardX < BOARD_WIDTH) {
+              gameBoard.value[boardY][boardX] = value;
+            }
+          }
+        });
+      });
+      clearLines();
+      createNewPiece();
+      if (!isValidMove(gameState.currentPiece, gameState.currentPosition)) {
+        endGame();
+      }
+    };
+
+    const clearLines = () => {
+      let linesCleared = 0;
+      gameBoard.value = gameBoard.value.filter(row => {
+        if (row.every(cell => cell === 1)) {
+          linesCleared++;
+          return false;
+        }
+        return true;
+      });
+      while (gameBoard.value.length < BOARD_HEIGHT) {
+        gameBoard.value.unshift(Array(BOARD_WIDTH).fill(0));
+      }
+      updateScore(linesCleared);
+    };
+
+    const updateScore = (linesCleared) => {
+      const points = [0, 40, 100, 300, 1200];
+      score.value += points[linesCleared] * level.value;
+      if (score.value > level.value * 1000) {
+        level.value++;
+      }
+    };
+
     const startGame = () => {
       gameRunning.value = true;
-      // Initialize game logic here
+      score.value = 0;
+      level.value = 1;
+      gameBoard.value = Array(BOARD_HEIGHT).fill().map(() => Array(BOARD_WIDTH).fill(0));
+      createNewPiece();
+      gameState.tickInterval = setInterval(gameTick, TICK_INTERVAL);
     };
 
     const endGame = () => {
       gameRunning.value = false;
-      // Clean up game state here
+      clearInterval(gameState.tickInterval);
     };
 
-    const movePiece = (direction) => {
-      // Implement piece movement logic
-    };
-
-    const rotatePiece = () => {
-      // Implement piece rotation logic
+    const gameTick = () => {
+      movePiece('down');
     };
 
     const handleKeyPress = (event) => {
@@ -74,13 +216,13 @@ export default {
       }
     };
 
-    // Lifecycle hooks
     onMounted(() => {
       window.addEventListener('keydown', handleKeyPress);
     });
 
     onUnmounted(() => {
       window.removeEventListener('keydown', handleKeyPress);
+      clearInterval(gameState.tickInterval);
     });
 
     return {
@@ -113,6 +255,22 @@ export default {
   height: 600px;
   border: 2px solid #333;
   background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.cell {
+  flex: 1;
+  border: 1px solid #ccc;
+}
+
+.cell.filled {
+  background-color: #333;
 }
 
 .game-controls {
