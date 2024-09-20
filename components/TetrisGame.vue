@@ -5,9 +5,19 @@
       <p>Score: {{ score }}</p>
       <p>Level: {{ level }}</p>
     </div>
-    <div class="game-board">
-      <div v-for="(row, rowIndex) in gameBoard" :key="rowIndex" class="row">
-        <div v-for="(cell, cellIndex) in row" :key="cellIndex" class="cell" :class="{ filled: cell }"></div>
+    <div class="game-area">
+      <div class="game-board">
+        <div v-for="(row, rowIndex) in displayBoard" :key="rowIndex" class="row">
+          <div v-for="(cell, cellIndex) in row" :key="cellIndex" class="cell" :class="{ filled: cell }"></div>
+        </div>
+      </div>
+      <div class="next-piece-preview">
+        <h3>Next Piece:</h3>
+        <div class="preview-board">
+          <div v-for="(row, rowIndex) in nextPieceDisplay" :key="rowIndex" class="preview-row">
+            <div v-for="(cell, cellIndex) in row" :key="cellIndex" class="preview-cell" :class="{ filled: cell }"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="game-controls">
@@ -21,7 +31,7 @@
 </template>
 
 <script>
-import { ref, reactive, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, computed, onMounted, onUnmounted } from 'vue';
 
 const BOARD_WIDTH = 10;
 const BOARD_HEIGHT = 20;
@@ -47,8 +57,42 @@ export default {
 
     const gameState = reactive({
       currentPiece: null,
+      nextPiece: null,
       currentPosition: { x: 0, y: 0 },
       tickInterval: null,
+    });
+
+    const displayBoard = computed(() => {
+      const board = gameBoard.value.map(row => [...row]);
+      if (gameState.currentPiece && gameRunning.value) {
+        for (let y = 0; y < gameState.currentPiece.length; y++) {
+          for (let x = 0; x < gameState.currentPiece[y].length; x++) {
+            if (gameState.currentPiece[y][x]) {
+              const boardY = gameState.currentPosition.y + y;
+              const boardX = gameState.currentPosition.x + x;
+              if (boardY >= 0 && boardY < BOARD_HEIGHT && boardX >= 0 && boardX < BOARD_WIDTH) {
+                board[boardY][boardX] = 1;
+              }
+            }
+          }
+        }
+      }
+      return board;
+    });
+
+    const nextPieceDisplay = computed(() => {
+      if (!gameState.nextPiece) return Array(4).fill().map(() => Array(4).fill(0));
+      const display = Array(4).fill().map(() => Array(4).fill(0));
+      const offsetY = Math.floor((4 - gameState.nextPiece.length) / 2);
+      const offsetX = Math.floor((4 - gameState.nextPiece[0].length) / 2);
+      for (let y = 0; y < gameState.nextPiece.length; y++) {
+        for (let x = 0; x < gameState.nextPiece[y].length; x++) {
+          if (gameState.nextPiece[y][x]) {
+            display[y + offsetY][x + offsetX] = 1;
+          }
+        }
+      }
+      return display;
     });
 
     const createNewPiece = () => {
@@ -102,6 +146,7 @@ export default {
       score.value = 0;
       level.value = 1;
       gameState.currentPiece = createNewPiece();
+      gameState.nextPiece = createNewPiece();
       gameState.currentPosition = { x: Math.floor(BOARD_WIDTH / 2) - 1, y: 0 };
       gameState.tickInterval = setInterval(gameTick, TICK_INTERVAL);
     };
@@ -115,7 +160,8 @@ export default {
       if (!canMoveTo(gameState.currentPiece, { x: gameState.currentPosition.x, y: gameState.currentPosition.y + 1 })) {
         placePiece();
         clearLines();
-        gameState.currentPiece = createNewPiece();
+        gameState.currentPiece = gameState.nextPiece;
+        gameState.nextPiece = createNewPiece();
         gameState.currentPosition = { x: Math.floor(BOARD_WIDTH / 2) - 1, y: 0 };
         if (!canMoveTo(gameState.currentPiece, gameState.currentPosition)) {
           endGame();
@@ -136,7 +182,8 @@ export default {
       } else if (direction === 'down') {
         placePiece();
         clearLines();
-        gameState.currentPiece = createNewPiece();
+        gameState.currentPiece = gameState.nextPiece;
+        gameState.nextPiece = createNewPiece();
         gameState.currentPosition = { x: Math.floor(BOARD_WIDTH / 2) - 1, y: 0 };
         if (!canMoveTo(gameState.currentPiece, gameState.currentPosition)) {
           endGame();
@@ -185,7 +232,8 @@ export default {
       score,
       level,
       gameRunning,
-      gameBoard,
+      displayBoard,
+      nextPieceDisplay,
       startGame,
       endGame,
     };
@@ -204,6 +252,11 @@ export default {
 .game-info {
   margin-bottom: 20px;
   text-align: center;
+}
+
+.game-area {
+  display: flex;
+  gap: 20px;
 }
 
 .game-board {
@@ -226,6 +279,35 @@ export default {
 }
 
 .cell.filled {
+  background-color: #333;
+}
+
+.next-piece-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-board {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-row {
+  display: flex;
+  flex-grow: 1;
+}
+
+.preview-cell {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+}
+
+.preview-cell.filled {
   background-color: #333;
 }
 
