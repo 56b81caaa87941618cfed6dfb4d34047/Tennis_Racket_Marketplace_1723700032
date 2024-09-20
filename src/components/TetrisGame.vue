@@ -63,19 +63,24 @@ function resetBoard() {
 }
 
 function spawnPiece() {
-  if (Object.keys(currentPiece).length === 0 || currentPiece.shape.length === 0) {
-    const randomPiece = tetrominos[Math.floor(Math.random() * tetrominos.length)];
-    Object.assign(currentPiece, { shape: randomPiece.shape, color: randomPiece.color, x: 3, y: 0 });
-  } else {
-    Object.assign(currentPiece, nextPiece);
-  }
-  
+  // If currentPiece is empty, it means we're starting a new game
   const randomPiece = tetrominos[Math.floor(Math.random() * tetrominos.length)];
-  nextPiece.shape = randomPiece.shape;
-  nextPiece.color = randomPiece.color;
-  
+  Object.assign(currentPiece, { shape: randomPiece.shape, color: randomPiece.color, x: 3, y: 0 });
+
+  // If the previous line didn't set it to zero, it's because of a continuing game
+  // And we take the next piece generated
+  if (currentPiece.shape.length !== 0) {
+    Object.assign(currentPiece, nextPiece);
+  } else {
+    Object.assign(currentPiece, randomPiece);
+  }
+
+  const randomNextPiece = tetrominos[Math.floor(Math.random() * tetrominos.length)];
+  nextPiece.shape = randomNextPiece.shape;
+  nextPiece.color = randomNextPiece.color;
+
   drawNextPiece();
-  
+
   if (!isValidMove(currentPiece.shape, currentPiece.x, currentPiece.y)) {
     endGame();
   }
