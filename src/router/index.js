@@ -3,6 +3,7 @@ import PurpleHeroComponent from '../components/purple_hero_component_1723700034.
 import PurpleFeatureGridComponent from '../components/purple_feature_grid_component_1723700034.vue'
 import PurpleBackgroundCtaComponent from '../components/purple_background_cta_component_1723700034.vue'
 import ParticleComponent from '../components/particle_component_1723700034.vue'
+import TetrisView from '../views/TetrisView.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/particle',
     name: 'Particle',
     component: ParticleComponent
+  },
+  {
+    path: '/tetris',
+    name: 'Tetris',
+    component: TetrisView
   }
 ]
 
