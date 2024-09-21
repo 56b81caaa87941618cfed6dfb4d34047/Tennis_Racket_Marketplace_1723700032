@@ -17,11 +17,13 @@
       <p>Your score: {{ score }}</p>
       <button @click="resetGame" class="reset-btn">Play Again</button>
     </div>
+    <Fireworks :trigger="showFireworks" :width="canvasWidth" :height="canvasHeight" />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import Fireworks from './Fireworks.vue';
 
 const gameCanvas = ref(null);
 const nextPieceCanvas = ref(null);
@@ -34,6 +36,7 @@ const boardHeight = 20;
 const score = ref(0);
 const gameRunning = ref(false);
 const gameOver = ref(false);
+const showFireworks = ref(false);
 
 let board = [];
 let currentPiece = null;
@@ -139,6 +142,10 @@ function clearLines() {
   }
   if (linesCleared > 0) {
     score.value += linesCleared * 100;
+    showFireworks.value = true;
+    setTimeout(() => {
+      showFireworks.value = false;
+    }, 1500);
   }
 }
 
