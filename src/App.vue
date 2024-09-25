@@ -4,6 +4,7 @@
     <PurpleHeader />
     <PurpleHero />
     <ParticleComponent title="Welcome to Vue 3" :initialCount="0" />
+    <TetrisGame />
     <PurpleFeatureGrid />
     <PurpleBackgroundCTA />
     <DarkFooter />
@@ -19,6 +20,7 @@ import ParticleComponent from './components/ParticleComponent.vue'
 import PurpleFeatureGrid from './components/PurpleFeatureGrid.vue'
 import PurpleBackgroundCTA from './components/PurpleBackgroundCTA.vue'
 import DarkFooter from './components/DarkFooter.vue'
+import TetrisGame from './components/TetrisGame.vue'
 
 // You can add any app-level logic here if needed
 const appTitle = ref('Vue 3 Application')
