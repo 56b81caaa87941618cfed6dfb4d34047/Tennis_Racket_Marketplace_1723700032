@@ -18,59 +18,54 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, computed, watch, onMounted, onUpdated, onUnmounted } from 'vue';
 
-
-export default {
-  name: "ExampleComponent",
-  props: {
-    title: {
-      type: String,
-      required: true
-    },
-    initialCount: {
-      type: Number,
-      default: 0
-    }
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
   },
-  data() {
-    return {
-      email: "",
-      count: this.initialCount,
-    };
-  },
-  computed: {
-    computedCount() {
-      return this.count * 2;
-    }
-  },
-  methods: {
-    submitForm() {
-      console.log("Form submitted with email:", this.email);
-      this.email = ""; // Reset email after submission
-    },
-    incrementCount() {
-      this.count++;
-    }
-  },
-  watch: {
-    email(newEmail) {
-      console.log("Email changed to:", newEmail);
-    }
-  },
-  created() {
-    console.log("Component created");
-  },
-  mounted() {
-    console.log("Component mounted");
-  },
-  updated() {
-    console.log("Component updated");
-  },
-  destroyed() {
-    console.log("Component destroyed");
+  initialCount: {
+    type: Number,
+    default: 0
   }
+});
+
+const email = ref("");
+const count = ref(props.initialCount);
+
+const computedCount = computed(() => {
+  return count.value * 2;
+});
+
+const submitForm = () => {
+  console.log("Form submitted with email:", email.value);
+  email.value = ""; // Reset email after submission
 };
+
+const incrementCount = () => {
+  count.value++;
+};
+
+watch(email, (newEmail) => {
+  console.log("Email changed to:", newEmail);
+});
+
+onMounted(() => {
+  console.log("Component mounted");
+});
+
+onUpdated(() => {
+  console.log("Component updated");
+});
+
+onUnmounted(() => {
+  console.log("Component destroyed");
+});
+
+// Equivalent to created() lifecycle hook
+console.log("Component created");
 </script>
 
 <style scoped>
