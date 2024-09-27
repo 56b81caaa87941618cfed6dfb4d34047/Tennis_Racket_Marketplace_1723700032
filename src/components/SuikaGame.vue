@@ -1,30 +1,41 @@
+
 <template>
   <div class="suika-game">
-    <div class="game-info">
-      <div class="score">Score: {{ score }}</div>
-      <div class="next-fruit">Next: {{ nextFruitName }}</div>
+    <div class="game-header">
+      <GameStatus
+        :score="score"
+        :highScore="highScore"
+        :isGameOver="gameOver"
+        @restart="startNewGame"
+      />
+      <FruitPreview :nextFruit="nextFruit" />
     </div>
-    <div ref="gameContainer" class="game-container"></div>
-    <button @click="startNewGame" class="new-game-btn">New Game</button>
+    <div ref="gameContainer" class="game-container" @mousemove="updateMousePosition"></div>
+    <button v-if="!gameOver" @click="startNewGame" class="new-game-btn">New Game</button>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 import Matter from 'matter-js';
+import GameStatus from './GameStatus.vue';
+import FruitPreview from './FruitPreview.vue';
 
 const gameContainer = ref(null);
 const score = ref(0);
+const highScore = ref(0);
 const nextFruit = ref(null);
 const fruits = ref([]);
 const gameOver = ref(false);
+const mousePosition = ref({ x: 0, y: 0 });
 
-const { Engine, Render, World, Bodies, Body, Events, Mouse, MouseConstraint } = Matter;
+const { Engine, Render, World, Bodies, Events, Mouse, MouseConstraint } = Matter;
 
 const engine = Engine.create();
 let render;
 let world;
 let mouseConstraint;
+let ghostFruit;
 
 const FRUITS = [
   { name: 'Cherry', radius: 15, color: '#ff0000', points: 1 },
@@ -39,8 +50,6 @@ const FRUITS = [
   { name: 'Melon', radius: 60, color: '#98fb98', points: 10 },
   { name: 'Watermelon', radius: 65, color: '#006400', points: 11 },
 ];
-
-const nextFruitName = computed(() => nextFruit.value ? nextFruit.value.name : '');
 
 function createFruit(x, y, fruit) {
   const body = Bodies.circle(x, y, fruit.radius, {
@@ -67,6 +76,7 @@ function dropFruit(x) {
   World.add(world, fruit);
   fruits.value.push(fruit);
   generateNextFruit();
+  updateGhostFruit();
 }
 
 function checkCollision(event) {
@@ -96,6 +106,7 @@ function checkGameOver() {
   for (const fruit of fruits.value) {
     if (fruit.position.y < topY) {
       gameOver.value = true;
+      updateHighScore();
       return;
     }
   }
@@ -109,6 +120,7 @@ function startNewGame() {
   gameOver.value = false;
   generateNextFruit();
   setupBoundaries();
+  updateGhostFruit();
 }
 
 function setupBoundaries() {
@@ -123,7 +135,48 @@ function setupBoundaries() {
   World.add(world, [ground, leftWall, rightWall]);
 }
 
+function updateMousePosition(event) {
+  const rect = event.target.getBoundingClientRect();
+  mousePosition.value = {
+    x: event.clientX - rect.left,
+    y: event.clientY - rect.top,
+  };
+  updateGhostFruit();
+}
+
+function updateGhostFruit() {
+  if (ghostFruit) {
+    World.remove(world, ghostFruit);
+  }
+  if (nextFruit.value && !gameOver.value) {
+    ghostFruit = Bodies.circle(mousePosition.value.x, 50, nextFruit.value.radius, {
+      isSensor: true,
+      isStatic: true,
+      render: {
+        fillStyle: nextFruit.value.color + '80', // Add 50% transparency
+      },
+    });
+    World.add(world, ghostFruit);
+  }
+}
+
+function updateHighScore() {
+  if (score.value > highScore.value) {
+    highScore.value = score.value;
+    localStorage.setItem('suikaHighScore', highScore.value);
+  }
+}
+
+function loadHighScore() {
+  const savedHighScore = localStorage.getItem('suikaHighScore');
+  if (savedHighScore) {
+    highScore.value = parseInt(savedHighScore, 10);
+  }
+}
+
 onMounted(() => {
+  loadHighScore();
+
   const width = gameContainer.value.clientWidth;
   const height = gameContainer.value.clientHeight;
 
@@ -169,6 +222,7 @@ onMounted(() => {
   Events.on(engine, 'collisionStart', checkCollision);
 
   generateNextFruit();
+  updateGhostFruit();
 
   const gameLoop = setInterval(() => {
     checkGameOver();
@@ -183,6 +237,12 @@ onUnmounted(() => {
   World.clear(world);
   Engine.clear(engine);
 });
+
+watch(gameOver, (newValue) => {
+  if (newValue) {
+    updateHighScore();
+  }
+});
 </script>
 
 <style scoped>
@@ -193,15 +253,15 @@ onUnmounted(() => {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+  position: relative;
 }
 
-.game-info {
+.game-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .game-container {
